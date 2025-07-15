@@ -1,0 +1,8 @@
+# Project dependencies
+
+fastapi
+uvicorn
+langchain
+openai
+python-dotenv
+pymysql
