@@ -20,9 +20,21 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.2, openai_api_key=ope
 
 # Define the tools available to the agent
 tools = [
-    Tool(name="CheckBalance", func=check_balance, description="Get current bank account balance"),
-    Tool(name="SendMoney", func=send_money, description="Send money to a user with name and amount"),
-    Tool(name="TransactionHistory", func=get_transaction_history, description="View recent transactions")
+    Tool(
+        name="CheckBalance",
+        func=check_balance,
+        description="Get current bank account balance"
+    ),
+    Tool(
+        name="SendMoney",
+        func=send_money,
+        description="Send money to someone. Expected input format: 'Send ₦2000 to Tolu'"
+    ),
+    Tool(
+        name="TransactionHistory",
+        func=get_transaction_history,
+        description="View recent transactions"
+    )
 ]
 
 # Build the agent

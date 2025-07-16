@@ -6,29 +6,76 @@ from logger import logger
 from database import SessionLocal, Transaction
 
 def check_balance(_input: str = "") -> str:
-    logger.info("Checking account balance")
-    return "Final Answer: Your account balance is ₦13,500.00"
+    """
+    Calculates real balance by subtracting all sent transaction amounts
+    from the starting balance (₦1,000,000).
+    """
+    from logger import logger
+    from database import SessionLocal, Transaction
+
+    STARTING_BALANCE = 1_000_000  # ₦1,000,000
+
+    try:
+        logger.info("🔎 Calculating dynamic balance...")
+
+        session = SessionLocal()
+        txns = session.query(Transaction).all()
+        session.close()
+
+        # Sum all transaction amounts (convert ₦ values to integers safely)
+        total_spent = 0
+        for txn in txns:
+            amount = txn.amount.replace("₦", "").replace(",", "").strip()
+            try:
+                total_spent += int(float(amount))
+            except ValueError:
+                logger.warning(f"❌ Invalid amount skipped: {txn.amount}")
+
+        balance = STARTING_BALANCE - total_spent
+        logger.info(f"🧮 Total spent: ₦{total_spent}, Balance: ₦{balance}")
+
+        return f"Final Answer: Your current balance is ₦{balance:,}.00"
+
+    except Exception as e:
+        logger.error(f"💥 Failed to calculate balance: {str(e)}")
+        return "Final Answer: ❌ Could not retrieve your balance."
+
 
 def send_money(input_str: str) -> str:
-    logger.info(f"Sending money: {input_str}")
+    """
+    Parses input like 'Send ₦1000 to Aisha' and saves it to DB.
+    """
+    from logger import logger
+    from database import SessionLocal, Transaction
 
-    # Simulate parsing amount and recipient
+    logger.info(f"🟡 Starting send_money tool with input: {input_str}")
+
     try:
-        parts = input_str.split(" to ")
-        amount = parts[0].replace("Send ", "").strip()
+        # Parse input
+        parts = input_str.replace("Send", "").split("to")
+        if len(parts) != 2:
+            raise ValueError("❌ Invalid format. Use: Send ₦amount to name")
+
+        amount = parts[0].strip()
         recipient = parts[1].strip()
 
-        # Save to DB
+        logger.info(f"Parsed amount: {amount}, recipient: {recipient}")
+
+        # DB Transaction
         session = SessionLocal()
         txn = Transaction(action="send", amount=amount, recipient=recipient)
         session.add(txn)
         session.commit()
         session.close()
 
+        logger.info("✅ Transaction saved successfully to DB")
+
         return f"Final Answer: ✅ Sent {amount} to {recipient}"
+
     except Exception as e:
-        logger.error(f"Failed to process send_money: {str(e)}")
-        return "Final Answer: ❌ Could not process transaction"
+        logger.error(f"🚨 send_money failed: {str(e)}")
+        return "Final Answer: ❌ Could not complete the transfer."
+
 
 def get_transaction_history(_input: str = "") -> str:
     logger.info("Fetching transaction history")

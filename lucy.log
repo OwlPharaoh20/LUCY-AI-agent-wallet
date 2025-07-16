@@ -1,0 +1,91 @@
+2025-07-16 07:09:50,117 [INFO] Running agent with prompt: Check my balance
+2025-07-16 07:09:51,816 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:09:51,856 [INFO] Checking account balance
+2025-07-16 07:09:53,053 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:10:21,576 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:10:21,583 [ERROR] Attempt 1 failed: Too many arguments to single-input tool SendMoney.
+                Consider using StructuredTool instead. Args: ['Tolu', 2000]
+2025-07-16 07:10:24,319 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:10:24,324 [ERROR] Attempt 2 failed: Too many arguments to single-input tool SendMoney.
+                Consider using StructuredTool instead. Args: ['Tolu', 2000]
+2025-07-16 07:10:27,152 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:10:27,157 [ERROR] Attempt 3 failed: Too many arguments to single-input tool SendMoney.
+                Consider using StructuredTool instead. Args: ['Tolu', 2000]
+2025-07-16 07:12:48,026 [INFO] Running agent with prompt: Show my transaction history
+2025-07-16 07:12:51,048 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:12:51,053 [INFO] Fetching transaction history
+2025-07-16 07:12:51,062 [ERROR] Attempt 1 failed: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2025-07-16 07:12:52,063 [INFO] Running agent with prompt: Show my transaction history
+2025-07-16 07:12:53,934 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:12:53,945 [INFO] Fetching transaction history
+2025-07-16 07:12:53,971 [ERROR] Attempt 2 failed: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2025-07-16 07:12:54,972 [INFO] Running agent with prompt: Show my transaction history
+2025-07-16 07:12:56,608 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:12:56,613 [ERROR] Attempt 3 failed: Too many arguments to single-input tool TransactionHistory.
+                Consider using StructuredTool instead. Args: []
+2025-07-16 07:29:30,851 [INFO] Running agent with prompt: Check my balance
+2025-07-16 07:29:33,907 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:29:33,923 [INFO] Checking account balance
+2025-07-16 07:29:35,598 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:29:52,538 [INFO] Running agent with prompt: Send ₦1000 to Aisha
+2025-07-16 07:29:55,115 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:29:55,185 [INFO] Processing send_money input: Send ₦1000 to Aisha
+2025-07-16 07:29:55,195 [ERROR] send_money failed: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2025-07-16 07:29:56,368 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:29:56,378 [INFO] Checking account balance
+2025-07-16 07:29:57,868 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:30:23,481 [INFO] Running agent with prompt: Show my transaction history
+2025-07-16 07:30:24,970 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:30:24,973 [INFO] Fetching transaction history
+2025-07-16 07:30:24,991 [ERROR] Attempt 1 failed: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2025-07-16 07:30:25,992 [INFO] Running agent with prompt: Show my transaction history
+2025-07-16 07:30:26,768 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:30:26,770 [INFO] Fetching transaction history
+2025-07-16 07:30:26,775 [ERROR] Attempt 2 failed: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2025-07-16 07:30:27,776 [INFO] Running agent with prompt: Show my transaction history
+2025-07-16 07:30:29,305 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 07:30:29,309 [INFO] Fetching transaction history
+2025-07-16 07:30:29,313 [ERROR] Attempt 3 failed: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+2025-07-16 10:01:48,067 [INFO] Running agent with prompt: Send ₦1000 to Aisha
+2025-07-16 10:01:50,483 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:01:50,499 [INFO] 🟡 Starting send_money tool with input: Send ₦1000 to Aisha
+2025-07-16 10:01:50,503 [INFO] Parsed amount: ₦1000, recipient: Aisha
+2025-07-16 10:01:50,548 [INFO] ✅ Transaction saved successfully to DB
+2025-07-16 10:01:51,785 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:03:58,863 [INFO] Running agent with prompt: Send ₦1000 to Abbey
+2025-07-16 10:04:01,347 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:04:01,350 [INFO] 🟡 Starting send_money tool with input: Send ₦1000 to Abbey
+2025-07-16 10:04:01,350 [INFO] Parsed amount: ₦1000, recipient: Abbey
+2025-07-16 10:04:01,356 [INFO] ✅ Transaction saved successfully to DB
+2025-07-16 10:04:01,885 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:06:46,742 [INFO] Running agent with prompt: What is my balance?
+2025-07-16 10:06:48,123 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:06:48,127 [INFO] Checking account balance
+2025-07-16 10:06:49,123 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:16:51,565 [INFO] Running agent with prompt: What is my balance?
+2025-07-16 10:16:53,415 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:16:53,428 [INFO] Checking account balance
+2025-07-16 10:16:54,440 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:18:17,517 [INFO] Running agent with prompt: Send ₦600 to luna
+2025-07-16 10:18:19,499 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:18:19,516 [INFO] 🟡 Starting send_money tool with input: Send ₦600 to Luna
+2025-07-16 10:18:19,516 [INFO] Parsed amount: ₦600, recipient: Luna
+2025-07-16 10:18:19,541 [INFO] ✅ Transaction saved successfully to DB
+2025-07-16 10:18:20,613 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:19:12,306 [INFO] Running agent with prompt: Send ₦100 to mike
+2025-07-16 10:19:14,473 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 10:19:14,482 [INFO] 🟡 Starting send_money tool with input: Send ₦100 to Mike
+2025-07-16 10:19:14,483 [INFO] Parsed amount: ₦100, recipient: Mike
+2025-07-16 10:19:14,499 [INFO] ✅ Transaction saved successfully to DB
+2025-07-16 10:19:17,254 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 13:30:43,498 [INFO] Running agent with prompt: what is m balance
+2025-07-16 13:30:44,931 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 13:30:44,971 [INFO] 🔎 Calculating dynamic balance...
+2025-07-16 13:30:45,073 [INFO] 🧮 Total spent: ₦2700, Balance: ₦997300
+2025-07-16 13:30:46,440 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 13:32:38,676 [INFO] Running agent with prompt: send ₦200000 to jamie
+2025-07-16 13:32:41,548 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-16 13:32:41,570 [INFO] 🟡 Starting send_money tool with input: Send ₦200000 to Jamie
+2025-07-16 13:32:41,571 [INFO] Parsed amount: ₦200000, recipient: Jamie
+2025-07-16 13:32:41,611 [INFO] ✅ Transaction saved successfully to DB
+2025-07-16 13:32:42,985 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

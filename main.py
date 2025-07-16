@@ -1,24 +1,24 @@
-#Mai entry Point 
-#CLI interface sing FASTapi and langchain to communicate Lucy
-
-from fastapi import FastAPI
+# main.py
 from agent import run_agent
+from fastapi import FastAPI
 import uvicorn
+import sys
 
 app = FastAPI()
 
 @app.get("/wallet")
 def run_wallet_agent(prompt: str):
-    """
-    Accepts a prompt from the user and sends it to the agent
-    Example:  http://localhost:8000/wallet?prompt=Check my balance
+    """Handles HTTP prompt."""
+    return {"response": run_agent(prompt)}
 
-    
-    """
-
-    response = run_agent(prompt)
-    return {"response": response}
-
+# 🔥 CLI fallback logic
 if __name__ == "__main__":
-    uvicorn.run("main:app", port=8000, reload=True)
+    if len(sys.argv) > 1:
+        # Run in CLI mode
+        prompt = " ".join(sys.argv[1:])
+        print("🧠 Lucy's Response:")
+        print(run_agent(prompt))
+    else:
+        # Start API server normally
+        uvicorn.run("main:app", port=8000, reload=True)
 
