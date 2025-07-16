@@ -7,6 +7,8 @@ from langchain_community.chat_models import ChatOpenAI
 from banking_tools import check_balance, send_money, get_transaction_history
 from dotenv import load_dotenv
 import os 
+import time
+from logger import logger
 
 # Load secrets from .env file
 load_dotenv()
@@ -33,11 +35,15 @@ agent = initialize_agent(
 )
 
 def run_agent(prompt: str) -> str:
-    """ Sends a user prompt to the LLM agent and returns a response."""
-    try:
-        return agent.run(prompt)
-    except Exception as e:
-        return f"⚠️ Agent Error: {str(e)}"
+    max_retries = 2
+    for attempt in range(max_retries + 1):
+        try:
+            logger.info(f"Running agent with prompt: {prompt}")
+            return agent.run(prompt)
+        except Exception as e:
+            logger.error(f"Attempt {attempt+1} failed: {str(e)}")
+            time.sleep(1)
+    return "Final Answer: Agent failed after multiple attempts."
     
 
 
